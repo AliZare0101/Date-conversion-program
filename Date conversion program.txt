@@ -1,0 +1,208 @@
+#include <stdio.h>
+#include <stdlib.h>
+unsigned int sal_shamci , mah_shamci , rooze_shamci , kole_roozhaye_shamci , teadade_salhaye_kabisah ,
+kole_roozhaye_milady , sal_milady , mah_milady , rooz_milady;
+unsigned int teadade_roozeMah[12]={0,31,62,93,124,155,186,216,246,276,306,336};
+//enum name_mah_milady{January=1,February,March,April,May,June,July,August,September,October,November,December};
+
+int main()
+{
+//************** vooroode tarikh shamci **************//
+    printf("Lotfan Sale shamci ra vared konnid: ");
+    scanf("%d",&sal_shamci);
+    printf("Lotfan mahe shamci ra vared konnid: ");
+    scanf("%d",&mah_shamci);
+    printf("Lotfan rooze shamci ra vared konnid: ");
+    scanf("%d",&rooze_shamci);
+    printf("\ntarikhe shamci vared shodah = %d / %d / %d" , sal_shamci , mah_shamci , rooze_shamci);
+
+/////////////////////////Tabdile sale Shamci be Miladi///////////////////////
+    if(mah_shamci == 10 )
+        if(rooze_shamci > 11)
+        {
+            sal_milady = sal_shamci + 622;
+        }else sal_milady = sal_shamci + 621;
+    if(mah_shamci <10)
+       sal_milady = sal_shamci + 621;
+    else if(mah_shamci>10)
+        sal_milady = sal_shamci + 622;
+    printf("\nsal_milady = %d" , sal_milady);
+
+/////////////////////////////////////////////////////////////////////////////
+    switch(mah_shamci)
+    {
+        case 1:
+            if(rooze_shamci<=12)
+            {
+                mah_milady = 3;
+
+                rooz_milady = rooze_shamci + 19;
+            }
+            else
+            {
+                mah_milady = 4;
+                rooz_milady = rooze_shamci - 12;
+            }
+            break;
+        case 2:
+            if(rooze_shamci<=11)
+            {
+                mah_milady = 4;
+                rooz_milady = rooze_shamci + 19;
+            }
+            else
+            {
+                mah_milady = 5;
+                rooz_milady = rooze_shamci - 11;
+            }
+            break;
+        case 3:
+            if(rooze_shamci<=11)
+            {
+                mah_milady = 5;
+                rooz_milady = rooze_shamci + 20;
+            }
+            else
+            {
+                mah_milady = 6;
+                rooz_milady = rooze_shamci - 11;
+            }
+            break;
+        case 4:
+            if(rooze_shamci<=10)
+            {
+                mah_milady = 6;
+                rooz_milady = rooze_shamci + 20;
+            }
+            else
+            {
+                mah_milady = 7;
+                rooz_milady = rooze_shamci - 10;
+            }
+            break;
+        case 5:
+            if(rooze_shamci<=10)
+            {
+                mah_milady = 7;
+                rooz_milady = rooze_shamci + 21;
+            }
+            else
+            {
+                mah_milady = 8;
+                rooz_milady = rooze_shamci - 10;
+            }
+            break;
+        case 6:
+            if(rooze_shamci<=10)
+            {
+                mah_milady = 8;
+                rooz_milady = rooze_shamci + 21;
+            }
+            else
+            {
+                mah_milady = 9;
+                rooz_milady = rooze_shamci - 10;
+            }
+            break;
+        case 7:
+            if(rooze_shamci<=9)
+            {
+                mah_milady = 9;
+                rooz_milady = rooze_shamci + 21;
+            }
+            else
+            {
+                mah_milady = 10;
+                rooz_milady = rooze_shamci - 9;
+            }
+            break;
+        case 8:
+            if(rooze_shamci<=10)
+            {
+                mah_milady = 10;
+                rooz_milady = rooze_shamci + 21;
+            }
+            else
+            {
+                mah_milady = 11;
+                rooz_milady = rooze_shamci - 10;
+            }
+            break;
+        case 9:
+            if(rooze_shamci<=10)
+            {
+                mah_milady = 11;
+                rooz_milady = rooze_shamci + 20;
+            }
+            else
+            {
+                mah_milady = 12;
+                rooz_milady = rooze_shamci - 10;
+            }
+            break;
+        case 10:
+            if(rooze_shamci<=11)
+            {
+                mah_milady = 12;
+                rooz_milady = rooze_shamci + 20;
+            }
+            else
+            {
+                mah_milady = 1;
+                rooz_milady = rooze_shamci - 11;
+            }
+            break;
+        case 11:
+            if(rooze_shamci<=12)
+            {
+                mah_milady = 1;
+                rooz_milady = rooze_shamci + 19;
+            }
+            else
+            {
+                mah_milady = 2;
+                rooz_milady = rooze_shamci - 12;
+            }
+            break;
+        case 12:
+            if(rooze_shamci<=10)
+            {
+                mah_milady = 2;
+                rooz_milady = rooze_shamci + 18;
+            }
+            else
+            {
+                mah_milady = 3;
+                rooz_milady = rooze_shamci - 10;
+            }
+            break;
+    }
+    printf("\nmah_milady = %d" , mah_milady);
+    printf("\nrooz_milady = %d" , rooz_milady);
+
+//************** mohasebah roozha az ebtedaya tarikhe shamci ta konoon **************//
+/*
+    teadade_salhaye_kabisah =(sal_shamci - 1)/4;
+    int temp = ((sal_shamci-1)%33);
+    if((temp == 1)||(temp == 5)||(temp == 9)||(temp == 13)||(temp == 17)||(temp == 22)||(temp == 26)||(temp == 30))
+    {
+       teadade_salhaye_kabisah++;
+        printf("\nteadade_salhaye_kabisah.. = %d " , teadade_salhaye_kabisah);
+    }
+    kole_roozhaye_shamci = ((sal_shamci - 1) * 365)- 10  + (teadade_roozeMah[mah_shamci-1]) + (rooze_shamci-1) + teadade_salhaye_kabisah;
+
+    printf("\nkole_roozhaye_shamci = %d " , kole_roozhaye_shamci);
+
+
+//************** mohasebah roozha az ebtedaya tarikhe miladi ta akhare shamci**************
+
+    kole_roozhaye_milady = kole_roozhaye_shamci + 226899 ;
+    printf("\nkole_roozhaye_milady = %d" , kole_roozhaye_milady);
+
+//************** mohasebah  miladi**************
+    sal_milady = (kole_roozhaye_milady / 365);
+    printf("\nsal_milady = %d" , sal_milady);
+*/
+//226899
+return 0;
+}
